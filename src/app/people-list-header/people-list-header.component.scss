@@ -1,0 +1,58 @@
+$green: #86bb71;
+$blue: #94c2ed;
+$orange: #e38968;
+$gray: #92959e;
+$darkgray: #3e4153;
+$white: #ffffff;
+$border-color: #dddddd;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*,
+*:focus,
+*:hover {
+  outline: none;
+}
+
+.hed {
+  width: 466px;
+  float: left;
+  padding: 10px 0 10px 15px;
+  border-bottom: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+
+  input.search {
+    width: 95%;
+    padding: 10px 10px 10px 33px;
+    margin-top: 22px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    border: 1px solid $border-color;
+  }
+
+  img.greeen-checbox {
+    position: relative;
+    top: 27px;
+    right: 25px;
+    width: 36px;
+  }
+
+  img.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  img.lupa {
+    position: relative;
+    width: 20px;
+    height: 14px;
+    bottom: 33px;
+    left: 8px;
+  }
+}

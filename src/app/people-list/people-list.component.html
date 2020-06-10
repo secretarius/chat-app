@@ -1,0 +1,68 @@
+<div class="people-list">
+  <h3 class="chats-title">Chats</h3>
+  <div class="people-list-wrapper"  *ngFor="let user of users">
+    <div>
+      <img class="avatar" src="./../assets/face_PNG5663.png" alt="avatar" />
+    </div>
+    <div class="som">
+      <div class="about">{{user?.name}}</div>
+      <div class="people-list-message">
+        {{messages}}
+      </div>
+      <div>
+      <img [ngClass]="{'greeen-checbox': user.status, 'transparent-greeen-checbox': !user.status}" src="./../assets/greencheckbox.png" />
+    </div>
+    </div>
+    <div class="mr01">
+      <span class="date">{{currentDate}}</span>
+    </div>
+  </div>
+
+  <div class="people-list-wrapper">
+    <div>
+      <img class="avatar" src="./../assets/face_PNG11756.png" alt="avatar" />
+    </div>
+    <div class="som">
+      <div class="about">Josefina</div>
+      <div class="people-list-message">
+        We are losing money! Quick!
+      </div>
+      <img class="greeen-checbox" src="./../assets/greencheckbox.png" />
+    </div>
+    <div class="mr01">
+      <span class="date">Jun 12, 2017</span>
+    </div>
+  </div>
+
+  <div class="people-list-wrapper">
+    <div>
+      <img class="avatar" src="./../assets/face_PNG5659.png" alt="avatar" />
+    </div>
+    <div class="som">
+      <div class="about">Alice Freeman</div>
+      <div class="people-list-message">
+        We are losing money! Quick!
+      </div>
+      <img class="greeen-checbox" src="./../assets/greencheckbox.png" />
+    </div>
+    <div class="mr01">
+      <span class="date">Jun 12, 2017</span>
+    </div>
+  </div>
+
+  <div class="people-list-wrapper">
+    <div>
+      <img class="avatar" src="./../assets/face_PNG5641.png" alt="avatar" />
+    </div>
+    <div class="som">
+      <div class="about">Kim Bessy</div>
+      <div class="people-list-message">
+        We are losing money! Quick!
+      </div>
+      <img class="greeen-checbox" src="./../assets/greencheckbox.png" />
+    </div>
+    <div class="mr01">
+      <span class="date">Jun 12, 2017</span>
+    </div>
+  </div>
+</div>

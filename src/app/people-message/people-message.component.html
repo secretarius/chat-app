@@ -1,0 +1,11 @@
+<div [ngClass]="{'flex-chat-wrapper': isUsersMessage, 'flex-chat-wrapper2': !isUsersMessage}">
+  <div [ngClass]="{'message-icon': isUsersMessage, 'message-icon-reverse': !isUsersMessage}">
+    <img *ngIf="isUsersMessage" class="avatar" src="./../assets/face_PNG11756.png" alt="avatar" />
+  </div>
+  <div class="message" [ngClass]="{'people-message': isUsersMessage, 'people-message-reverse': !isUsersMessage}">
+    {{message.text}}
+  </div>
+</div>
+<div [ngClass]="{'message-data': isUsersMessage, 'message-data-reverse': !isUsersMessage}">
+  <span [ngClass]="{'message-data-time': isUsersMessage, 'message-data-time-reverse': !isUsersMessage}">{{message.date}}</span>
+</div>

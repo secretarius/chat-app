@@ -1,0 +1,23 @@
+<div class="chat-message">
+  <textarea
+    name="message-to-send"
+    (input)="str = $event.target.value"
+    id="message-to-send"
+    placeholder="Type your message"
+    rows="3"
+  ></textarea>
+  <img (click)="sendMessage()" class="arrow-right" src="./../assets/arrow-r.png" />
+  <!-- <button>Send</button> -->
+</div>
+
+
+<!-- <input
+
+    /> -->
+    <!-- <button class="chatButton"
+    (click)=send()>Send</button> -->
+
+    <!-- class="chatInput"
+    [(ngModel)]="message"
+    (keydown)="handleSubmit($event)" -->
+

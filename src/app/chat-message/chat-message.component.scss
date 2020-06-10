@@ -1,0 +1,59 @@
+$green: #86bb71;
+$blue: #94c2ed;
+$orange: #e38968;
+$gray: #92959e;
+$darkgray: #3e4153;
+$white: #ffffff;
+$border-color: #dddddd;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*,
+*:focus,
+*:hover {
+  outline: none;
+}
+
+.chat-message {
+  padding: 30px;
+
+  textarea {
+    width: 100%;
+    border: 1px solid $border-color;
+    padding: 15px;
+    font: 18px "Open Sans", sans-serif;
+    font-weight: bold;
+    color: $darkgray;
+    margin-bottom: 10px;
+    border-radius: 23px;
+    max-height: 59px;
+    resize: none;
+  }
+
+  img.arrow-right {
+    position: relative;
+    float: right;
+    bottom: 55px;
+    right: 14px;
+    cursor: pointer;
+  }
+
+  // button {
+  //   float: right;
+  //   color: $blue;
+  //   font-size: 16px;
+  //   text-transform: uppercase;
+  //   border: none;
+  //   cursor: pointer;
+  //   font-weight: bold;
+  //   background: #f2f5f8;
+
+  //   &:hover {
+  //     color: darken($blue, 7%);
+  //   }
+  // }
+}

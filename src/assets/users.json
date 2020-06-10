@@ -1,0 +1,16 @@
+{
+  "userList":
+  [{
+      "name": "Bob",
+      "status": true,
+      "id": 1
+  },{
+      "name": "Tom",
+      "status": false,
+      "id": 2
+  },{
+      "name": "Alice",
+      "status": true,
+      "id": 3
+  }]
+}

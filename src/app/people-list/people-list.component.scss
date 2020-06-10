@@ -1,0 +1,117 @@
+$green: #86bb71;
+$blue: #94c2ed;
+$orange: #e38968;
+$gray: #92959e;
+$darkgray: #3e4153;
+$white: #ffffff;
+$border-color: #dddddd;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*,
+*:focus,
+*:hover {
+  outline: none;
+}
+
+.people-list-wrapper {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: flex-start;
+  border-bottom: 1px solid $border-color;
+  padding-top: 20px;
+  // padding-bottom: 20px;
+
+  .som {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+  }
+
+  .mr01 {
+    margin: 0px 10px 0px auto;
+  }
+}
+
+.people-list {
+  clear: left;
+  width: 466px;
+  // float: left;
+  min-height: 500px;
+  border-right: 1px solid $border-color;
+  background-color: white;
+
+  .chats-title {
+    color: #62a4b8;
+    padding: 20px 10px 25px 20px;
+    font-size: 24px;
+  }
+
+  // ul {
+  //   padding: 20px;
+  //   height: 770px;
+  //   list-style-type: none;
+
+  //   li {
+  //     padding-bottom: 20px;
+  //   }
+  // }
+
+  img {
+    width: 50px;
+    margin-left: 15px;
+  }
+
+  img.greeen-checbox {
+    position: relative;
+    bottom: 21px;
+    right: 52px;
+    width: 36px;
+    height: 20px;
+  }
+
+  img.transparent-greeen-checbox {
+    position: relative;
+    visibility: hidden;
+    bottom: 21px;
+    right: 52px;
+    width: 36px;
+    height: 20px;
+  }
+
+  img.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .about {
+    color: $darkgray;
+    font-weight: bold;
+  }
+
+  .people-list-message {
+    min-height: 35px;
+    max-width: 291px;
+    font-size: 12px;
+    &:div::after {
+      content: "";
+    }
+  }
+
+  .status {
+    color: $gray;
+    font-weight: bold;
+  }
+
+  .date {
+    color: $gray;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}

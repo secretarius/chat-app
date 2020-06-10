@@ -1,0 +1,54 @@
+$green: #86bb71;
+$blue: #94c2ed;
+$orange: #e38968;
+$gray: #92959e;
+$darkgray: #3e4153;
+$white: #ffffff;
+$border-color: #dddddd;
+
+.chat-history-header {
+  display: flex;
+  padding: 10px 0 10px 15px;
+  border-bottom: 1px solid $border-color;
+
+  img {
+    width: 50px;
+  }
+
+  img.greeen-checbox {
+    position: relative;
+    top: 36px;
+    right: 25px;
+    width: 36px;
+    height: 20px;
+  }
+
+  img.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .chat-about {
+    margin-left: -15px;
+    margin-top: 18px;
+  }
+
+  .chat-with {
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .chat-num-messages {
+    color: $gray;
+  }
+
+  // .fa-star {
+  //   float: right;
+  //   color: #D8DADF;
+  //   font-size: 20px;
+  //   margin-top: 12px;
+  // }
+}

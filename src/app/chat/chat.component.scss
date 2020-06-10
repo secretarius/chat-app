@@ -1,0 +1,16 @@
+$green: #86bb71;
+$blue: #94c2ed;
+$orange: #e38968;
+$gray: #92959e;
+$darkgray: #3e4153;
+$white: #ffffff;
+$border-color: #dddddd;
+
+.chat-history {
+  padding: 20px 5px;
+  border-bottom: 1px solid $border-color;
+  // overflow-y: scroll;
+  height: fit-content;
+  background-color: #fafafa;
+}
+
