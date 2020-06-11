@@ -1,5 +1,6 @@
 import { Message } from './../message';
 import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-chat',
@@ -9,7 +10,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ChatComponent implements OnInit {
 
   @Input() messages:Message;
-  @Input() currentUserId:number;
+  @Input() currentUserId: number;
+  @Input() selectedUser: number;
 
   constructor() { }
 

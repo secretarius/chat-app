@@ -8,11 +8,16 @@ export class HttpService {
 
   constructor(private http: HttpClient) {}
 
+
   getData() {
     return this.http.get('assets/users.json');
   }
 
   getValue() {
     return this.http.get(this.REST_API_SERVER);
+  }
+
+  getMessages() {
+    return this.http.get('assets/messagesMock.json');
   }
 }

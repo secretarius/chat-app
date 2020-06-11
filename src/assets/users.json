@@ -1,16 +1,24 @@
 {
   "userList":
   [{
+      "name": "Emma",
+      "status": true,
+      "id": 1,
+      "image": "./../assets/face_PNG5659.png"
+  },{
       "name": "Bob",
       "status": true,
-      "id": 1
-  },{
-      "name": "Tom",
-      "status": false,
-      "id": 2
+      "id": 2,
+      "image": "./../assets/face_PNG5663.png"
   },{
       "name": "Alice",
       "status": true,
-      "id": 3
-  }]
+      "id": 3,
+      "image": "./../assets/face_PNG11756.png"
+  },{
+      "name": "Naomi",
+      "status": false,
+      "id": 4,
+      "image": "./../assets/face_PNG5641.png"
+}]
 }

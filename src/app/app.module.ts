@@ -9,7 +9,6 @@ import { PeopleListHeaderComponent } from './people-list-header/people-list-head
 import { ChatHistoryHeaderComponent } from './chat-history-header/chat-history-header.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { PeopleMessageComponent } from './people-message/people-message.component';
-import { MyMessageComponent } from './my-message/my-message.component';
 import { HttpClientModule }   from '@angular/common/http';
 
 @NgModule({
@@ -20,8 +19,7 @@ import { HttpClientModule }   from '@angular/common/http';
     PeopleListHeaderComponent,
     ChatHistoryHeaderComponent,
     ChatMessageComponent,
-    PeopleMessageComponent,
-    MyMessageComponent,
+    PeopleMessageComponent
   ],
   imports: [
     BrowserModule,

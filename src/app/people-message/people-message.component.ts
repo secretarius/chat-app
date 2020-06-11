@@ -1,3 +1,4 @@
+import { User } from './../user';
 import { Message } from './../message';
 import { Component, OnInit, Input } from '@angular/core';
 // import * as moment from 'moment';
@@ -15,12 +16,14 @@ export class PeopleMessageComponent implements OnInit {
 
   @Input() message: Message;
   @Input() currentUserId: number;
-
+  selectedUser: User;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.isUsersMessage = this.message.userId === this.currentUserId ? false : true;
+    this.isUsersMessage = this.message.senderId === this.currentUserId ? false : true;
     // this.curTime = `${this.now} ${this.clock}`;
+    //const a = sessionStorage.getItem('selectedUser')
+    this.selectedUser = JSON.parse(sessionStorage.selectedUser);
   }
 }

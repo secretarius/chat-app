@@ -1,7 +1,7 @@
 <div class="chat-history-header">
-  <img class="avatar" src="./../assets/face_PNG11756.png" alt="avatar" />
-  <img class="greeen-checbox" src="./../assets/greencheckbox.png" />
+  <img class="avatar" [src]="selectedUser ? selectedUser.image : './../assets/incognito-avatar.png'" alt="avatar" />
+  <img *ngIf="selectedUser" [ngClass]="{'greeen-checbox': selectedUser.status, 'transparent-greeen-checbox': !selectedUser.status}"  src="./../assets/greencheckbox.png" />
   <div class="chat-about">
-    <div class="chat-with">Josefina</div>
+    <div class="chat-with">{{selectedUser ? selectedUser.name : ""}}</div>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { User } from './user';
 import { Component } from '@angular/core';
 import { HttpService} from './http.service';
 import { Message } from './message';
+import * as moment from 'moment';
 
 
 @Component({
@@ -12,32 +13,64 @@ import { Message } from './message';
 })
 export class AppComponent {
   title = 'chatapp';
+
+  curTime: string = '';
+  now: string = moment().format('L');
+  clock: string = moment().format('LT');
+
   currentUserId = 0; //get this by backend duering login
-  activeUserId = 1;
 
   users: User[]=[];
-  messages: Message[]=[{ text: "hellowe!", date: "05.03.12", userId: 1 }];
+  messages: Message[];
+  currentUserMessages: Message[];
+  responsMessage: string;
+  selectedUser: User;
 
     constructor(private httpService: HttpService){}
 
     ngOnInit() {
       this.httpService.getData().subscribe(data => this.users=data["userList"]);
-      
+      //setTimeout(() => this.selectedUser = this.users[0], 1000);
+
+      this.httpService.getValue().subscribe((ata: any[])=> {
+        this.responsMessage = ata['value'];
+      })
+
+      this.httpService.getMessages().subscribe(data => this.currentUserMessages=data["messagesList"]);
+      this.selectUser(this.users[0]);
     }
 
     messageEvent(message) {
       this.messages.push(message);
-      console.log(this.messages.length);
+      this.currentUserMessages.push(message);
       this.getRespon();
     }
 
     getRespon() {
+      this.httpService.getValue().subscribe((ata: any[])=> {
+        this.responsMessage = ata['value'];
+      })
       let message: Message = new Message();
-      message.text = "srgaerherhththtrhjtrjsrj";
-      message.date = "10.06.2020"
-      message.userId = this.activeUserId;
+      message.text = this.responsMessage;
+      message.date = this.curTime = `${this.now} ${this.clock}`;
+      message.resssiverId = this.currentUserId;
+      message.senderId = this.selectedUser.id;
       this.messages.push(message);
+      this.currentUserMessages.push(message);
     }
+
+    selectUser(user) {
+      if (user) {
+        this.selectedUser = user;
+        this.messages = this.getChat(this.currentUserId, user.id);
+      }
+    }
+
+    getChat(currentUserId: number, selectedUserId: number):Message[] {
+      const currentChat = this.currentUserMessages.filter(mess => (mess.senderId === currentUserId && mess.resssiverId === selectedUserId) || (mess.senderId === selectedUserId && mess.resssiverId === currentUserId));
+      return currentChat;
+    }
+
 }
 
 

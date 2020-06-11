@@ -1,8 +1,9 @@
 import { Message } from './../message';
-import { Component, OnInit } from '@angular/core';
-// import * as moment from 'moment';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import * as moment from 'moment';
 import { User } from './../user';
 import { HttpService} from './../http.service';
+
 
 @Component({
   selector: 'app-people-list',
@@ -11,7 +12,8 @@ import { HttpService} from './../http.service';
 })
 export class PeopleListComponent implements OnInit {
   currentDate: string = "";
-  // date: string = moment().format('LL');
+  date: string = moment().format('LL');
+  @Output() selectedUser = new EventEmitter<number>();
 
   users: User[]=[];
   messages: Message[]=[];
@@ -20,13 +22,21 @@ export class PeopleListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.currentDate = this.date;
+    this.currentDate = this.date;
     this.httpService.getData().subscribe(data => this.users=data["userList"]);
-    this.httpService.getValue().subscribe((ata: any[])=>{
-      console.log(ata);
-      this.messages = ata['value'];
-      console.log(this.messages);
-    })
+
+    this.httpService.getMessages().subscribe(data => this.messages=data["messagesList"]);
   }
+
+  selectUser(user) {
+    sessionStorage.selectedUser = JSON.stringify(user);
+    this.selectedUser.emit(user);
+  }
+
+  getLastMessage(user:User): string {
+    const chat = this.messages.filter(mess => mess.senderId === user.id || mess.resssiverId === user.id);
+    return chat.length > 0 ? chat[chat.length - 1].text : '';
+  }
+
 
 }
