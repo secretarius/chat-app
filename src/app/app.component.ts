@@ -24,6 +24,7 @@ export class AppComponent {
   currentUserMessages: Message[];
   responsMessage: string;
   selectedUser: User;
+  filteredUsers: User[] = [];
 
   constructor(private httpService: HttpService) {}
 
@@ -35,14 +36,13 @@ export class AppComponent {
     this.httpService
       .getData()
       .subscribe(data => {this.users = data['userList'];
-      console.log(this.users[0]);
       this.selectUser(this.users[0]);
+      this.filteredUsers = this.users;
     });
 
     this.httpService.getValue().subscribe((data: any[]) => {
       this.responsMessage = data['value'];
     });
-
   }
 
   messageEvent(message) {
@@ -80,4 +80,12 @@ export class AppComponent {
     );
     return currentChat;
   }
+
+  search(str) {
+    if(str.length === 0) {
+      this.filteredUsers = this.users;
+    } else {
+      this.filteredUsers = this.users.filter(user => user.name.toLowerCase().includes(str.toLowerCase()));
+  }
+}
 }

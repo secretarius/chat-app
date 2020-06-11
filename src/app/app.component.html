@@ -2,8 +2,8 @@
   <div>
 </div>
   <div>
-    <app-people-list-header></app-people-list-header>
-    <app-people-list (selectedUser)="selectUser($event)"></app-people-list>
+    <app-people-list-header (searchEvent)="search($event)"></app-people-list-header>
+    <app-people-list [users]="filteredUsers" (selectedUser)="selectUser($event)"></app-people-list>
   </div>
   <div class="chat">
     <app-chat-history-header [selectedUser]="selectedUser"></app-chat-history-header>

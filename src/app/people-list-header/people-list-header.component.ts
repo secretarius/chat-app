@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-people-list-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleListHeaderComponent implements OnInit {
 
+  @Output() searchEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  search($event) {
+    if($event.target.value.length > 2 || $event.target.value.length === 0) {
+      this.searchEvent.emit($event.target.value);
+    }
+  }
 }

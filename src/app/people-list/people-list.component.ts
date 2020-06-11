@@ -1,5 +1,5 @@
 import { Message } from './../message';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import * as moment from 'moment';
 import { User } from './../user';
 import { HttpService} from './../http.service';
@@ -15,7 +15,7 @@ export class PeopleListComponent implements OnInit {
   date: string = moment().format('LL');
   @Output() selectedUser = new EventEmitter<number>();
 
-  users: User[]=[];
+  @Input() users: User[]=[];
   messages: Message[]=[];
 
     constructor(private httpService: HttpService){}
@@ -23,7 +23,6 @@ export class PeopleListComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentDate = this.date;
-    this.httpService.getData().subscribe(data => this.users=data["userList"]);
 
     this.httpService.getMessages().subscribe(data => this.messages=data["messagesList"]);
   }
