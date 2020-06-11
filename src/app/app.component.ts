@@ -29,17 +29,20 @@ export class AppComponent {
 
   ngOnInit() {
     this.httpService
+      .getMessages()
+      .subscribe((data) => (this.currentUserMessages = data['messagesList']));
+
+    this.httpService
       .getData()
-      .subscribe((data) => (this.users = data['userList']));
+      .subscribe(data => {this.users = data['userList'];
+      console.log(this.users[0]);
+      this.selectUser(this.users[0]);
+    });
 
     this.httpService.getValue().subscribe((data: any[]) => {
       this.responsMessage = data['value'];
     });
 
-    this.httpService
-      .getMessages()
-      .subscribe((data) => (this.currentUserMessages = data['messagesList']));
-    this.selectUser(this.users[0]);
   }
 
   messageEvent(message) {

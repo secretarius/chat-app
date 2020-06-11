@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -9,8 +10,8 @@ export class HttpService {
   constructor(private http: HttpClient) {}
 
 
-  getData() {
-    return this.http.get('assets/users.json');
+  getData(): Observable<any[]> {
+    return this.http.get<any[]>('assets/users.json');
   }
 
   getValue() {
