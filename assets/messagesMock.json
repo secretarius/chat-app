@@ -1,0 +1,82 @@
+{
+  "messagesList":
+  [{
+      "text": "Quickly come to the meeting room 1B, we have a big server issue",
+      "status": true,
+      "date": "11/06/2020 4:05 AM",
+      "senderId": 1,
+      "resssiverId": 0
+  },{
+      "text": "We are loosing money! Quick!",
+      "status": false,
+      "date": "11/06/2020 4:08 AM",
+      "senderId": 2,
+      "resssiverId": 0
+  },{
+      "text": "You are the worst",
+      "status": true,
+      "date": "11/06/2020 4:09 AM",
+      "senderId": 0,
+      "resssiverId": 1
+  },{
+    "text": "I'm having breackfast right now can you wait 10 minutes?",
+    "status": false,
+    "date": "11/06/2020 4:10 AM",
+    "senderId": 1,
+    "resssiverId": 0
+  },{
+    "text": "You are the worst",
+    "status": true,
+    "date": "11/06/2020 4:11 AM",
+    "senderId": 0,
+    "resssiverId": 2
+  },{
+    "text": "I'm having breackfast right now can you wait 10 minutes?",
+    "status": false,
+    "date": "11/06/2020 4:12 AM",
+    "senderId": 2,
+    "resssiverId": 0
+  },{
+    "text": "Quickly come to the meeting room 1B, we have a big server issue",
+    "status": false,
+    "date": "11/06/2020 4:13 AM",
+    "senderId": 0,
+    "resssiverId": 2
+  },{
+    "text": "Quickly come to the meeting room 1B, we have a big server issue",
+    "status": true,
+    "date": "11/06/2020 4:14 AM",
+    "senderId": 0,
+    "resssiverId": 1
+  },{
+    "text": "You are the worst",
+    "status": false,
+    "date": "11/06/2020 4:15 AM",
+    "senderId": 0,
+    "resssiverId": 1
+  },{
+      "text": "Quickly come to the meeting room 1B, we have a big server issue",
+      "status": true,
+      "date": "11/06/2020 4:16 AM",
+      "senderId": 3,
+      "resssiverId": 0
+  },{
+      "text": "We are loosing money! Quick!",
+      "status": false,
+      "date": "11/06/2020 4:17 AM",
+      "senderId": 0,
+      "resssiverId": 3
+  },{
+      "text": "You are the worst",
+      "status": true,
+      "date": "11/06/2020 4:18 AM",
+      "senderId": 3,
+      "resssiverId": 0
+  },{
+    "text": "I'm having breackfast right now can you wait 10 minutes?",
+    "status": false,
+    "date": "11/06/2020 4:19 AM",
+    "senderId": 1,
+    "resssiverId": 0
+  }]
+  }
