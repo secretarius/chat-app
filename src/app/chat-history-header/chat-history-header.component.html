@@ -1,6 +1,6 @@
 <div class="chat-history-header">
   <img class="avatar" [src]="selectedUser ? selectedUser.image : ''" alt="avatar" />
-  <img *ngIf="selectedUser" [ngClass]="{'greeen-checbox': selectedUser.status, 'transparent-greeen-checbox': !selectedUser.status}"  src="./../assets/greencheckbox.png" />
+  <img *ngIf="selectedUser" [ngClass]="{'greeen-checbox': selectedUser.status, 'transparent-greeen-checbox': !selectedUser.status}"  src="./assets/greencheckbox.png" />
   <div class="chat-about">
     <div class="chat-with">{{selectedUser ? selectedUser.name : ""}}</div>
   </div>
