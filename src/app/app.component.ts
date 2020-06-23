@@ -1,5 +1,5 @@
 import { User } from './user';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { HttpService } from './http.service';
 import { Message } from './message';
 import * as moment from 'moment';
@@ -12,6 +12,9 @@ import * as moment from 'moment';
 })
 export class AppComponent {
   title = 'chatapp';
+  isMobile: boolean;
+  isClicked: boolean = false;
+  isFirstTimeUserSelected = false;
 
   curTime: string = '';
   now: string = moment().format('L');
@@ -33,9 +36,8 @@ export class AppComponent {
       .getMessages()
       .subscribe((data) => (this.currentUserMessages = data['messagesList']));
 
-    this.httpService
-      .getData()
-      .subscribe(data => {this.users = data['userList'];
+    this.httpService.getData().subscribe((data) => {
+      this.users = data['userList'];
       this.selectUser(this.users[0]);
       this.filteredUsers = this.users;
     });
@@ -43,6 +45,18 @@ export class AppComponent {
     this.httpService.getValue().subscribe((data: any[]) => {
       this.responsMessage = data['value'];
     });
+
+    this.widthResize();
+    //this.isClicked = true;
+  }
+
+  @HostListener('window:resize', [])
+  widthResize() {
+    if (window.matchMedia('(max-device-width: 667px)').matches) {
+      this.isMobile = true;
+    } else {
+      this.isMobile = false;
+    }
   }
 
   messageEvent(message) {
@@ -68,6 +82,11 @@ export class AppComponent {
     if (user) {
       this.selectedUser = user;
       this.messages = this.getChat(this.currentUserId, user.id);
+      if (!this.isFirstTimeUserSelected) {
+        this.isFirstTimeUserSelected = true;
+      } else {
+        this.isClicked = true;
+      }
     }
   }
 
@@ -82,10 +101,12 @@ export class AppComponent {
   }
 
   search(str) {
-    if(str.length === 0) {
+    if (str.length === 0) {
       this.filteredUsers = this.users;
     } else {
-      this.filteredUsers = this.users.filter(user => user.name.toLowerCase().includes(str.toLowerCase()));
+      this.filteredUsers = this.users.filter((user) =>
+        user.name.toLowerCase().includes(str.toLowerCase())
+      );
+    }
   }
-}
 }

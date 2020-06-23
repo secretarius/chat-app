@@ -93,12 +93,14 @@ $border-color: #dddddd;
   .about {
     color: $darkgray;
     font-weight: bold;
+    cursor: default;
   }
 
   .people-list-message {
     min-height: 35px;
     max-width: 289px;
     font-size: 12px;
+    cursor: default;
     &:div::after {
       content: "";
     }
@@ -113,5 +115,15 @@ $border-color: #dddddd;
     color: $gray;
     font-weight: bold;
     font-size: 14px;
+  }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .people-list {
+    width: auto;
+    border-right: none;
   }
 }

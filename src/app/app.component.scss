@@ -36,3 +36,26 @@ body {
 .chat {
   width: 1100px;
 }
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    margin: auto;
+  }
+  .container {
+    width: auto;
+    display: block;
+  }
+  .chat{
+      width: auto;
+  }
+
+  .chat-hidden {
+    display: none;
+  }
+}
+
+
+

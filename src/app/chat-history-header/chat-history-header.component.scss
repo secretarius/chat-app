@@ -61,3 +61,17 @@ $border-color: #dddddd;
   //   margin-top: 12px;
   // }
 }
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .chat-history-header {
+    position: fixed;
+    width: -webkit-fill-available;
+    background: white;
+    margin-top: -71px;
+    min-height: 65px;
+    padding: 9px 0px 0px 4px;
+  }
+}

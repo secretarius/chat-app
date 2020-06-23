@@ -56,3 +56,16 @@ $border-color: #dddddd;
     left: 8px;
   }
 }
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .hed {
+    width: auto;
+    float: none;
+    padding: 5px 0px 0px 10px;
+    border-bottom: none;
+    border-right: none;
+    }
+}
