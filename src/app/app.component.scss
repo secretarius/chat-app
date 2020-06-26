@@ -33,7 +33,7 @@ body {
   background: #f5f5f5;
 }
 
-.chat {
+.chatDesktop {
   width: 1100px;
 }
 
@@ -48,11 +48,11 @@ and (-webkit-min-device-pixel-ratio: 2) {
     width: auto;
     display: block;
   }
-  .chat{
-      width: auto;
+  .chatMobile{
+    width: auto;
   }
 
-  .chat-hidden {
+  .chatMobile-hidden {
     display: none;
   }
 }
