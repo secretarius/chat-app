@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../user';
 
 
@@ -10,10 +10,15 @@ import { User } from '../user';
 export class ChatHistoryHeaderComponent implements OnInit {
 
   @Input() selectedUser: User;
-
+  @Input() isMobile: true;
+  @Output() backHomeEvent = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  backHomePage(backArrow:any) {
+    this.backHomeEvent.emit(backArrow)
+  }
 }

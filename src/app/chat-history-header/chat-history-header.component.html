@@ -1,7 +1,7 @@
 <div class="chat-history-header">
-  <img class="avatar" [src]="selectedUser ? selectedUser.image : ''" alt="avatar" />
+  <img *ngIf="!isMobile" class="avatar" [src]="selectedUser ? selectedUser.image : ''" alt="avatar" />
+  <img *ngIf="isMobile" (click)="backHomePage(true)" class="arrow-left" src="./assets/arrow-left.png" />
   <img *ngIf="selectedUser" [ngClass]="{'greeen-checbox': selectedUser.status, 'transparent-greeen-checbox': !selectedUser.status}"  src="./assets/greencheckbox.png" />
   <div class="chat-about">
     <div class="chat-with">{{selectedUser ? selectedUser.name : ""}}</div>
-  </div>
 </div>

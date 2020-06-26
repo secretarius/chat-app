@@ -6,7 +6,7 @@
     <app-people-list [users]="filteredUsers" (selectedUser)="selectUser($event)"></app-people-list>
   </div>
   <div [ngClass]="{'chatMobile': isClicked, 'chatMobile-hidden': !isClicked && isMobile, 'chatDesktop': !isMobile}">
-    <app-chat-history-header [selectedUser]="selectedUser"></app-chat-history-header>
+    <app-chat-history-header (backHomeEvent)="backHomeEvent($event)" [isMobile]="isMobile" [selectedUser]="selectedUser"></app-chat-history-header>
     <app-chat [selectedUser]="selectedUser" [messages]="messages" [currentUserId]="currentUserId"></app-chat>
     <app-chat-message (messageEvent)="messageEvent($event)" [currentUserId]="currentUserId" [selectedUser]="selectedUser"></app-chat-message>
   </div>

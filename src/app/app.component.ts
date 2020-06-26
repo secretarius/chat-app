@@ -28,6 +28,7 @@ export class AppComponent {
   responsMessage: string;
   selectedUser: User;
   filteredUsers: User[] = [];
+  backArrow: boolean;
 
   constructor(private httpService: HttpService) {}
 
@@ -108,5 +109,10 @@ export class AppComponent {
         user.name.toLowerCase().includes(str.toLowerCase())
       );
     }
+  }
+
+  backHomeEvent(backArrow:any) {
+    this.backArrow = false;
+    this.isClicked = this.backArrow;
   }
 }

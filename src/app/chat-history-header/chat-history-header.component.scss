@@ -42,6 +42,7 @@ $border-color: #dddddd;
   .chat-about {
     margin-left: -15px;
     margin-top: 18px;
+    min-width: 34px;
   }
 
   .chat-with {
@@ -53,13 +54,6 @@ $border-color: #dddddd;
   .chat-num-messages {
     color: $gray;
   }
-
-  // .fa-star {
-  //   float: right;
-  //   color: #D8DADF;
-  //   font-size: 20px;
-  //   margin-top: 12px;
-  // }
 }
 
 @media only screen
@@ -71,7 +65,23 @@ and (-webkit-min-device-pixel-ratio: 2) {
     width: -webkit-fill-available;
     background: white;
     margin-top: -71px;
-    min-height: 65px;
+    min-height: 55px;
     padding: 9px 0px 0px 4px;
+  }
+
+  img.arrow-left {
+    position: relative;
+    width: auto !important;
+    height: 28px;
+    padding-right: 20px;
+    top: 11px;
+  }
+
+  img.greeen-checbox {
+    position: static;
+    top: 15px !important;
+    width: 36px;
+    height: 20px;
+    left: -12px;
   }
 }
