@@ -37,5 +37,4 @@ export class PeopleListComponent implements OnInit {
     return chat.length > 0 ? chat[chat.length - 1].text : '';
   }
 
-
 }
